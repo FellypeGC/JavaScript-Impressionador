@@ -15,7 +15,7 @@ const numeroImpar = {
     n1: 3,
     n2: 1,
     n3: 5,
-    n4: 17,
+    n4: 17, 
 }; 
 
 console.log(numeroImpar)
