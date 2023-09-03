@@ -1,6 +1,6 @@
 const meuComputador = {
     Gabinete: 'Mancer Ward',
-    PlacaMãe: 'Asrock B450m Steel Legend',
+    PlacaMãe: 'Asrock B450M Steel Legend',
     MemóriaRAM: 'HyperX Kingston Fury 2x8GB 3200Mhz',
     Processador: 'AMD Ryzen 5 5600G',
     WaterCooler: 'Rise Mode 240mm RM-WCB-02-RGB',
