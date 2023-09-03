@@ -14,3 +14,4 @@ console.log(`Memória RAM: ${meuComputador.MemóriaRAM}`);
 console.log(`Processador: ${meuComputador.Processador}`);
 console.log(`Water Cooler: ${meuComputador.WaterCooler}`);
 console.log(`Placa de Vídeo: ${meuComputador.GPU}`);
+console.log('--------------------------------------');
