@@ -9,7 +9,7 @@ function mediaAluno() {
     const notaTerceiraProva = 4;
     const mediaParaPassar = 5;
     const mediaFinal = (notaPrimeiraProva + notaSegundaProva + notaTerceiraProva) / 3;
-    console.log(`A média desse aluno é ${mediaFinal}. O aluno não passou pois a média para passar é ${mediaParaPassar}.`);
+    console.log(`A média desse aluno é ${mediaFinal}. O aluno não passou pois a média para passar é ${mediaParaPassar}. Fará a prova final.`);
 
     console.log('----------------------------------------------');
 
