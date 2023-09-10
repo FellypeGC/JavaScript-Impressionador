@@ -52,7 +52,7 @@ function calcularValorImposto() {
     const imposto = valorEtiqueta * valorTaxaDeImposto;
     const valorTotal = valorEtiqueta + imposto;
 
-    console.log(`O valor a ser pago é R$${valorTotal}.`)
+    console.log(`O valor a ser pago é R$${valorTotal.toFixed(2)}.`)
 }
 
 calcularValorImposto();
