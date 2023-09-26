@@ -16,7 +16,10 @@ usuario.time === 'Fluminense' && usuario.idade >= 18
     : usuario.idade >= 18 
     ? console.log(mensagemDeBoasVindasGeral) 
     : console.log('Não vendemos ingresso para torcedores menores de 18 anos');
-} while (numeroDeRepeticoes < 50000);
 
-console.log(mensagemDeEscolha);
-console.log(mensagemFinal);
+    console.log(mensagemDeEscolha);
+    console.log(mensagemFinal);
+    numeroDeRepeticoes++;
+} while (numeroDeRepeticoes < 5);
+
+console.log('Ingressos Esgotados!');
