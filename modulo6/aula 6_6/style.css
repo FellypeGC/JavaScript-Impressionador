@@ -32,4 +32,11 @@ div {
 
 button {
     background-color: cornflowerblue;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 10px solid red;
+}
+
+button:hover {
+    background-color: aqua;
 }
