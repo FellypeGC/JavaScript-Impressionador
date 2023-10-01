@@ -1,0 +1,35 @@
+body {
+    background-color: aquamarine;
+}
+
+#div-conteudo-1 {
+    background-color: red;
+}
+
+.classe-grupo-amarelo {
+    background-color: yellow;
+}
+
+div {
+    background-color: pink; 
+}
+
+.classe-texto-azul {
+    color: blue;
+}
+
+.classe-grupo-amarelo.classe-texto-azul {
+    color: green;
+}
+
+#div-conteudo-4-7 div {
+    background-color: blueviolet;
+}
+
+#div-conteudo-4-7 > div {
+    background-color: orange;
+}
+
+button {
+    background-color: cornflowerblue;
+}
