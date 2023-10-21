@@ -69,15 +69,15 @@ console.log('Resolução Exercício 4');
 
 function desempenhoIndividualDeVendas(desempenhoDeUmVendedor) {
     if (desempenhoDeUmVendedor >= 99) {
-        return 'Excelente Desempenho'
+        return 'Excelente Desempenho';
     } else if (desempenhoDeUmVendedor > 90) {
-        return 'Muito Bom Desempenho'
+        return 'Muito Bom Desempenho';
     } else if (desempenhoDeUmVendedor >= 80 ) {
-        return 'Bom Desempenho'
+        return 'Bom Desempenho';
     } else if (desempenhoDeUmVendedor >= 61) {
-        return 'Desempenho Satisfatório'
+        return 'Desempenho Satisfatório';
     } else {
-        return 'Desempenho Insatisfatório'
+        return 'Desempenho Insatisfatório';
     }
 }
 
@@ -92,3 +92,21 @@ console.log(desempenhoIndividualDeVendas(vendedor2));
 console.log(desempenhoIndividualDeVendas(vendedor3));
 console.log(desempenhoIndividualDeVendas(vendedor4));
 console.log(desempenhoIndividualDeVendas(vendedor5));
+
+
+// Resolução Exercício 5
+console.log('Resolução Exercício 5')
+
+function verificarVelocidade(velocidadeDeUmVeículo) {
+    if (velocidadeDeUmVeículo <= 80) {
+        return true;
+    } else {
+        return false; 
+    }
+}
+
+const carro1 = 50;
+const carro2 = 105;
+
+console.log(verificarVelocidade(carro1));
+console.log(verificarVelocidade(carro2));
