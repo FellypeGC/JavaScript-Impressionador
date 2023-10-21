@@ -63,3 +63,32 @@ const pontuaçãoCliente3 = 40;
 console.log(categoriaCliente(pontuaçãoCliente1));
 console.log(categoriaCliente(pontuaçãoCliente2));
 console.log(categoriaCliente(pontuaçãoCliente3));
+
+// Resolução Exercício 4
+console.log('Resolução Exercício 4');
+
+function desempenhoIndividualDeVendas(desempenhoDeUmVendedor) {
+    if (desempenhoDeUmVendedor >= 99) {
+        return 'Excelente Desempenho'
+    } else if (desempenhoDeUmVendedor > 90) {
+        return 'Muito Bom Desempenho'
+    } else if (desempenhoDeUmVendedor >= 80 ) {
+        return 'Bom Desempenho'
+    } else if (desempenhoDeUmVendedor >= 61) {
+        return 'Desempenho Satisfatório'
+    } else {
+        return 'Desempenho Insatisfatório'
+    }
+}
+
+const vendedor1 = 99
+const vendedor2 = 95
+const vendedor3 = 88
+const vendedor4 = 67
+const vendedor5 = 30
+
+console.log(desempenhoIndividualDeVendas(vendedor1));
+console.log(desempenhoIndividualDeVendas(vendedor2));
+console.log(desempenhoIndividualDeVendas(vendedor3));
+console.log(desempenhoIndividualDeVendas(vendedor4));
+console.log(desempenhoIndividualDeVendas(vendedor5));
