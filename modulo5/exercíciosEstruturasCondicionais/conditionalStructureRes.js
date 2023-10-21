@@ -67,31 +67,31 @@ console.log(categoriaCliente(pontuaçãoCliente3));
 // Resolução Exercício 4
 console.log('Resolução Exercício 4');
 
-function desempenhoIndividualDeVendas(desempenhoDeUmVendedor) {
-    if (desempenhoDeUmVendedor >= 99) {
+function desempenhoIndividualDeVendas(vendasMensais, metaDeVendas) {
+    const percentualAlcancado = (vendasMensais / metaDeVendas) * 100;
+
+    if (percentualAlcancado >= 100) {
         return 'Excelente Desempenho';
-    } else if (desempenhoDeUmVendedor > 90) {
+    } else if (percentualAlcancado >= 90 && percentualAlcancado < 100) {
         return 'Muito Bom Desempenho';
-    } else if (desempenhoDeUmVendedor >= 80 ) {
+    } else if (percentualAlcancado >= 80 && percentualAlcancado < 90) {
         return 'Bom Desempenho';
-    } else if (desempenhoDeUmVendedor >= 61) {
+    } else if (percentualAlcancado >= 61 && percentualAlcancado < 80) {
         return 'Desempenho Satisfatório';
     } else {
         return 'Desempenho Insatisfatório';
     }
 }
 
-const vendedor1 = 99;
-const vendedor2 = 95;
-const vendedor3 = 88;
-const vendedor4 = 67;
-const vendedor5 = 30;
-
-console.log(desempenhoIndividualDeVendas(vendedor1));
-console.log(desempenhoIndividualDeVendas(vendedor2));
-console.log(desempenhoIndividualDeVendas(vendedor3));
-console.log(desempenhoIndividualDeVendas(vendedor4));
-console.log(desempenhoIndividualDeVendas(vendedor5));
+const vendasMensais = 7500;
+const metaDeVendas = 10000;
+const categoriaDesempenho = desempenhoIndividualDeVendas(
+ vendasMensais,
+ metaDeVendas
+);
+console.log(`Categoria de Desempenho: ${categoriaDesempenho}`);
+console.log(`Vendas Mensais: R$ ${vendasMensais}`);
+console.log(`Meta de Vendas: R$ ${metaDeVendas}`);
 
 
 // Resolução Exercício 5
@@ -158,7 +158,6 @@ function coresDoSemaforo(corSemaforoEx) {
    }
   
 const corSemaforoExemploEx = "verde"; 
-necessário
 console.log(coresDoSemaforo(corSemaforoExemplo));
 
 // Resolução Exercício 8
