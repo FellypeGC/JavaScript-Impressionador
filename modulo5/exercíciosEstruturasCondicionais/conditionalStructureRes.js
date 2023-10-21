@@ -95,7 +95,7 @@ console.log(desempenhoIndividualDeVendas(vendedor5));
 
 
 // Resolução Exercício 5
-console.log('Resolução Exercício 5')
+console.log('Resolução Exercício 5');
 
 function verificarVelocidade(velocidadeDeUmVeículo) {
     if (velocidadeDeUmVeículo <= 80) {
@@ -110,3 +110,88 @@ const carro2 = 105;
 
 console.log(verificarVelocidade(carro1));
 console.log(verificarVelocidade(carro2));
+
+// Resolução Exercício 6
+console.log('Resolução Exercício 6');
+
+function mensagemSemaforo(corSemaforo) {
+    const mensagem = 
+    corSemaforo === 'vermelho'
+    ? 'Pare o veículo'
+    :corSemaforo === 'amarelo'
+    ? 'Reduza a velocidade e pare se seguro.'
+    : corSemaforo === 'verde'
+    ? 'Você pode continuar com cuidado.'
+    : 'Cor do Semáforo desconhecida. Siga com atenção';
+    return mensagem;
+}
+
+const corSemaforoExemplo = 'verde';
+const mensagem = mensagemSemaforo(corSemaforoExemplo);
+console.log(mensagem);
+const corSemaforoExemplo2 = 'vermelho';
+const mensagem2 = mensagemSemaforo(corSemaforoExemplo2);
+console.log(mensagem2);
+const corSemaforoExemplo3 = 'amarelo';
+const mensagem3 = mensagemSemaforo(corSemaforoExemplo3);
+console.log(mensagem3);
+
+// Resolução Exercício 7
+console.log('Resolução Exercício 7');
+
+function coresDoSemaforo(corSemaforoEx) {
+    let mensagem;
+    switch (corSemaforoEx) {
+    case "vermelho":
+    mensagem = "Pare o veículo imediatamente!";
+    break;
+    case "amarelo":
+    mensagem = "Reduza a velocidade e pare se seguro.";
+    break;
+    case "verde":
+    mensagem = "Você pode continuar com cuidado.";
+    break;
+    default:
+    mensagem = "Cor do semáforo desconhecida. Siga com atenção.";
+    }
+    return mensagem;
+   }
+  
+const corSemaforoExemploEx = "verde"; 
+necessário
+console.log(coresDoSemaforo(corSemaforoExemplo));
+
+// Resolução Exercício 8
+console.log('Resolução Exercício 8');
+
+function verificarPlaca(ultimoDigitoPlaca) {
+    let diaRodizio;
+    switch (ultimoDigitoPlaca) {
+    case 1:
+    case 2:
+    diaRodizio = "Segunda-feira";
+    break;
+    case 3:
+    case 4:
+    diaRodizio = "Terça-feira";
+    break;
+    case 5:
+    case 6:
+    diaRodizio = "Quarta-feira";
+    break;
+    case 7:
+    case 8:
+    diaRodizio = "Quinta-feira";
+    break;
+    case 9:
+    case 0:
+    diaRodizio = "Sexta-feira";
+    break;
+    default:
+    diaRodizio = "Placa inválida";
+    }
+    return `O dia de rodízio é na ${diaRodizio}.`;
+   }
+   
+   const ultimoDigitoPlacaExemplo = 3; 
+   console.log(verificarPlaca(ultimoDigitoPlacaExemplo));
