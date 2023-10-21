@@ -81,11 +81,11 @@ function desempenhoIndividualDeVendas(desempenhoDeUmVendedor) {
     }
 }
 
-const vendedor1 = 99
-const vendedor2 = 95
-const vendedor3 = 88
-const vendedor4 = 67
-const vendedor5 = 30
+const vendedor1 = 99;
+const vendedor2 = 95;
+const vendedor3 = 88;
+const vendedor4 = 67;
+const vendedor5 = 30;
 
 console.log(desempenhoIndividualDeVendas(vendedor1));
 console.log(desempenhoIndividualDeVendas(vendedor2));
