@@ -1,9 +1,13 @@
-setTimeout(function () {
-    console.log('Escreva essa minha mensagem aqui!');
-}, 2000);
+// setTimeout(function () {
+//     console.log('Escreva essa minha mensagem aqui!');
+// }, 2000);
 
 function writeThisMessageOnConsole(message) {      
     console.log(message);
+}
+
+const resultFunction = function () {
+    writeThisMessageOnConsole('Escreva essa minha mensagem aqui!');
 }
 
 // const result = writeThisMessageOnConsole('parametro');
@@ -12,3 +16,5 @@ function writeThisMessageOnConsole(message) {
 // writeThisMessageOnConsole()
 
 // HTMLElement.addEventListener('click', writeThisMessageOnConsole);
+
+resultFunction();
