@@ -8,3 +8,20 @@ lance um erro intencionalmente usando throw new Error(). Este erro deve indicar 
 converter a string em número. Utilize um bloco try...catch para lidar com o erro que ocorre ao tentar converter
 a string em um número. No bloco catch, exiba a mensagem de erro capturada no console usando
 console.error(). */
+
+function tratarErroConversaoTipo() {
+  try {
+    const numero = 'Hashtag';
+    const resultado = parseInt(numero);
+
+    if (isNaN(resultado)) {
+      throw new Error('Não foi possível converter a string para um número');
+    }
+    console.log('Número convertido com sucesso ', resultado);
+  } catch (error) {
+    console.error(error.message);
+  }
+  
+}
+
+tratarErroConversaoTipo();

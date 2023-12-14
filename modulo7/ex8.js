@@ -8,3 +8,40 @@ informando que ocorreu um erro durante a conexão com o banco de dados. Utilize 
 garantir que a conexão com o banco de dados seja fechada, se necessário, independentemente de ocorrer um
 erro ou não. */
 
+//Ficticio
+// function conectarBancoDeDados() {
+//   try {
+//     const objeto = null;
+//     console.log(objeto.propriedade);
+//   } catch (error) {
+//     console.error('Erro de conexão',WebTransportError);
+//   } finally {
+//     console.log('Bloco finally: Conexão encerrada');
+//   }
+// }
+
+// conectarBancoDeDados();
+
+//Banco de dados
+
+let banco = {
+  registros1: {id: 1, nome: 'item 1'},
+  registros2: {id: 2, nome: 'item 2'},
+  registros3: {id: 3, nome: 'item 3'},
+};
+
+function conectarBancoDeDadosFake() {
+  try {
+    const resultado = banco.registros1;
+    if(!resultado) {
+      throw new Error('Erro: Registro não encontrado');
+    }
+    console.log('Registro encontrado',resultado);
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    console.log('Conexão foi encerrada');
+  }
+}
+
+conectarBancoDeDadosFake();
