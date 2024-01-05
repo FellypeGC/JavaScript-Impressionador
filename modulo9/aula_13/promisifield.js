@@ -45,8 +45,7 @@ async function displayLirasPhotos() {
     const friends = await getFriendList(user);
     const photos = await getPhotos(friends[3]);
     console.log(photos);
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   } finally {
     console.log('Treinando a conexão com o Instagram');
