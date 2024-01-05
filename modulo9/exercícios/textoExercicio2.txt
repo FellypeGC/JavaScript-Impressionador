@@ -1,0 +1,2 @@
+Parabéns! Você conseguiu ler o arquivo e exibi-lo no console!
+Dito isso: Vá pa puta que o pariu. Sucumba Callback
