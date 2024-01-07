@@ -16,7 +16,6 @@ function serverConnection() {
 async function connectionError() {
   try {
     const connecting = await serverConnection();
-    console.log()
   } catch (error) {
     console.error(error);
   }
