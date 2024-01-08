@@ -7,3 +7,5 @@ const promise = new Promise((resolve, reject) => {
     resolve('Promise resolvida');
   }, 1000);
 }).then(console.log);
+
+//p1.then(console.log);
