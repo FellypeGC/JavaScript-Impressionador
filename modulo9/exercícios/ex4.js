@@ -9,11 +9,9 @@ async function promises() {
     }).then(console.log);
 
   const promise2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
       setTimeout(() => {
         resolve('Mundo');
       }, 2000);
-    })
   }).then(console.log);
 }
 
