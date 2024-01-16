@@ -19,4 +19,4 @@ function BankAccount(personName, initialBalance, address) {
 const ba1 = new BankAccount('Daniel', 2000, 'Rua que sobe e desce');
 
 ba1.printInfo();
-console.log({} instanceof BankAccount);
+console.log(ba1 instanceof BankAccount);
