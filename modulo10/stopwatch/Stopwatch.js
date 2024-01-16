@@ -1,18 +1,21 @@
 class Stopwacth {
   elapsedTimeInSeconds = 0;
+  intervalId = null;
 
   start() {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.elapsedTimeInSeconds++;
     }, 1000);
   }
 
-  stop() {}
+  stop() {
+    clearInterval(this.intervalId);
+  }
 
-  resizeTo() {}
+  reset() {
+    this.elapsedTimeInSeconds = 0;
+  }
 }
 
 const sw1 = new Stopwacth();
 sw1.start();
-console.log(sw1.elapsedTimeInSeconds);
-setTimeout(() => console.log(sw1.elapsedTimeInSeconds), 3000);
