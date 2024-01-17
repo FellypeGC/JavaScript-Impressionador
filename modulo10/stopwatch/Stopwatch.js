@@ -1,20 +1,24 @@
 class Stopwatch {
-  elapsedTimeInSeconds = 0;
-  intervalId = null;
+  #elapsedTimeInSeconds = 0;
+  #intervalId = null;
 
   start() {
-    this.intervalId = setInterval(() => {
-      this.elapsedTimeInSeconds++;
+    this.#intervalId = setInterval(() => {
+      this.#elapsedTimeInSeconds++;
       console.log(Stopwatch.formatTime(this.elapsedTimeInSeconds));
     }, 1000);
   }
 
   stop() {
-    clearInterval(this.intervalId);
+    clearInterval(this.#intervalId);
   }
 
   reset() {
-    this.elapsedTimeInSeconds = 0;
+    this.#elapsedTimeInSeconds = 0;
+  }
+
+  get elapsedTime() {
+    return Stopwatch.formatTime(this.#elapsedTimeInSeconds);
   }
 
   static formatTime(timeInSeconds) {
