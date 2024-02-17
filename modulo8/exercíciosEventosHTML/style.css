@@ -47,6 +47,7 @@ img {
   margin-bottom: 30px; /* Aumenta o espaçamento abaixo da imagem */
   transition: transform 0.3s;
   border-radius: 10%;
+  cursor: pointer;
 }
 
 img:hover {
