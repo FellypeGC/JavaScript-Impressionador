@@ -10,15 +10,17 @@
   <h2>Eventos em elementos HTML</h2>
 
   <p 
-    onmouseover="this.style.color = 'red'"
-    onmouseout="this.style.color = 'black'" 
+    onmouseover="mudarCor(this, 'red')"
+    onmouseout="mudarCor(this, 'black')"
   >
     Passe o mouse aqui para mudar a cor do texto.
   </p>
-  <button onclick="alert('Botão clicado!')">Clique aqui</button>
+  <button onclick="btnAlert()">Clique aqui</button>
 
-  <input type="text" placeholder="Digite aqui" onfocus="this.value = 'Campo em foco'" onblur="this.value = ''"/>
+  <input type="text" placeholder="Digite aqui" onfocus="focusField(this)" onblur="noFocusField(this)"/>
 
-  <img src="imagem1.png" alt="Imagem misteriosa" onmouseover="this.src = 'imagem2.png'" onmouseout="this.src = 'imagem1.png'"/>
+  <img src="imagem1.png" alt="Imagem misteriosa" onmouseover="changeImageEasier(this, 'imagem2.png')" onmouseout="changeImageEasier(this, 'imagem1.png')"/>
+
+  <script src="index.js"></script>
 </body>
 </html>
