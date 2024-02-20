@@ -20,5 +20,20 @@
     <p>Parágrafo 2</p>
     <p>Parágrafo 3</p>
   </div>
+  <script>
+    const listaItens = document.getElementById('lista').getElementsByTagName('li');
+    //Acessar o segundo elemento da HTMLCollection
+    console.log('Segundo elemento: ', listaItens[1]);
+
+    const paragrafos = document.getElementById('conteudo').getElementsByTagName('p');
+    //Acessar os elementos do Nodelist usando loop - for
+    console.log('Acessando elementos do NodeList loop for: ');
+    for(let i = 0; i < paragrafos.length; i++) {
+      console.log(paragrafos[i]);
+    }
+
+    //Acessando o segundo elemento do Nodelist
+    console.log('Acessando o segundo elemento Nodelist: ', paragrafos[1]);
+  </script>
 </body>
 </html>
