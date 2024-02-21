@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 7px;
+}
+
+.btn {
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(23, 23, 221);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+}
+
+input {
+  padding: 7px;
+}
