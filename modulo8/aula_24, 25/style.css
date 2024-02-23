@@ -1,0 +1,17 @@
+#meuElemento {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+}
+
+.square {
+  border-radius: 0%;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.btns {
+  margin-top: 20px;
+}
