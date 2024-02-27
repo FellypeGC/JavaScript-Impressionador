@@ -22,12 +22,3 @@ function addTask() {
     alert('Insira uma tarefa.');
   }
 }
-
-//Os PASSOS 2 AO 8 SERÃO IMPLEMENTADOS DENTRO DA FUNÇÃO addTask().
-
-
-//Passo 8 - Lidar com tarefas vazias:
-//Caso o campo de entrada esteja vazio no momento de adicionar, exiba um alerta pedindo para inserir uma tarefa.
-
-//Passo 9 -  Testar a funcionalidade:
-//Teste sua implementação interagindo com o campo de entrada, adicionando tarefas e removendo-as utilizando o botão de remoção.
