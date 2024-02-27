@@ -5,21 +5,16 @@
 }
 
 #container {
-  max-width: 70%;
+  max-width: 60%;
   border: 1px solid rgba(0, 0, 0, 0.185);
   border-radius: 7px;
   margin: 2rem auto;
-  height: 200px;
   padding: 2rem;
-}
-
-.input-field {
-  margin-top: 1rem;
-  padding-top: 2rem;
 }
 
 input {
   padding: 7px;
+  margin-top: .6rem;
 }
 
 button {
@@ -30,8 +25,25 @@ button {
   border-radius: 4px;
   font-size: 18px;
   cursor: pointer;
+  margin-top: .6rem;
+  margin-left: .5rem;
+}
+
+button:hover {
+  background-color: #0a66cf;
+  color: #fff;
+  padding: 11px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
