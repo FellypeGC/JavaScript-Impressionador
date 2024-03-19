@@ -12,13 +12,13 @@
     const btn = document.getElementById('btn');
     let count = 0;
 
-    function handleClick() {
+    function handleClick(event) {
       count++;
-      if(count < 4) {
-        console.log('Clicado');
-        btn.removeEventListener('click', () => {
+      console.log(count);
+
+      if(count >= 4) {
         console.log('Limite excedido');
-        });
+        btn.removeEventListener('click', handleClick);
       }
     } 
 
