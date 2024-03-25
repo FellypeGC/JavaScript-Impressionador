@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   formulario.addEventListener('submit', function (event) {
     if (!validarCamposObrigatorios()) {
       event.preventDefault(); // Impede a submissão do formulário se houver erros
+      console.log(!validarCamposObrigatorios())
     }
 
     function validarCamposObrigatorios() {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
           camposValidos = false;
         }
       } // elemento 0, 1, 2, 3
+      console.log(camposValidos)
       return camposValidos;
     }
   });
