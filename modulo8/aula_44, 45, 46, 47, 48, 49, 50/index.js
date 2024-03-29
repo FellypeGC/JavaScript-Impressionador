@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   formulario.addEventListener('submit', function (event) {
     resetarMensagensDeErro();
-    
+
     if (!validarCamposObrigatorios()) {
       event.preventDefault(); // Impede a submissão do formulário se houver erros
     }
