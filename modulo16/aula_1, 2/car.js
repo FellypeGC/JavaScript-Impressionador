@@ -1,7 +1,7 @@
-const numberOfTires = 4;
+export const numberOfTires = 4;
 const isAirBagNecessary = true;
 
-class Car {
+export class Car {
   constructor(brand, model, year) {
     this.brand = brand;
     this.model = model;
@@ -25,4 +25,4 @@ class Car {
 };
 
 //CommonJs
-module.exports.Car = Car;
+//module.exports.Car = Car;
