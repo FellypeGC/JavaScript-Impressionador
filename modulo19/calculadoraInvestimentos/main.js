@@ -2,7 +2,9 @@ import { generateReturnsArray } from "./src/investmentGoals";
 
 const calculateButton = document.getElementById('calculate-results');
 
-function renderProgression() {
+function renderProgression(evt) {
+  evt.preventDefault();
+
   const startingAmount = Number(document.getElementById('starting-amount').value);
   const additionalContribution = Number(document.getElementById('additional-contribution').value);
   const timeAmount = Number(document.getElementById('time-amount').value);
@@ -11,16 +13,16 @@ function renderProgression() {
   const returnRate = Number(document.getElementById('return-rate').value);
   const taxRate = Number(document.getElementById('tax-rate').value);
 
-  const returnsArray = generateReturnsArray(
+  const returnArrays = generateReturnsArray(
     startingAmount,
-    timeAmount,
+    timeAmount, 
     timeAmountPeriod, 
     additionalContribution, 
     returnRate, 
     returnRatePeriod
-  );
+  )
 
-  console.log(returnsArray);
+  console.log(returnArrays);
 }
 
 calculateButton.addEventListener('click', renderProgression);
