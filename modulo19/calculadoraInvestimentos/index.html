@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Investimentos</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
   </head>
   <body class="h-[100dvh] grid grid-cols-3 grid-rows-2">
     <aside
@@ -132,9 +133,14 @@
           type="submit"
           class="w-1/2 rounded-lg bg-emerald-950 text-slate-200 hover:bg-emerald-800"
         >
-          Calcular
+         Calcular
         </button>
-        <button id="clear-form" class="w-1/2 rounded-lg hover:bg-emerald-500">Limpar</button>
+        <button 
+          id="clear-form" 
+          class="w-1/2 rounded-lg hover:bg-emerald-500"
+        >
+         Limpar
+        </button>
       </div>
     </aside>
     <main class="h-full">
