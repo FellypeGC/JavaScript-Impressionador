@@ -47,9 +47,7 @@ function renderProgression(evt) {
   evt.preventDefault();
   if (
     document.querySelector('.error') &&
-    document.querySelector('.border-2') && 
-    document.querySelector('.border-red-500') && 
-    document.querySelector('.rounded-lg')
+    document.querySelector('.border-2', '.border-red-500', '.rounded-lg')
   ) {
     return;
   }
