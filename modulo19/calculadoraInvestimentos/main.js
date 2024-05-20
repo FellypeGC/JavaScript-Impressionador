@@ -193,15 +193,12 @@ function validateInput(evt) {
     console.log('grandParentElement:', grandParentElement);
   } else if (
     parentElement.classList.contains('error') && 
-    parentElement.classList.contains('border-2') && 
-    parentElement.classList.contains('border-red-500') &&
-    parentElement.classList.contains('rounded-lg') &&
+    ['border-2', 'border-red-500', 'rounded-lg'].every(cls => parentElement.classList.contains(cls)) &&
     !isNaN(inputValue) && Number(inputValue) > 0
   ) {
     parentElement.classList.remove('border-2');
-    parentElement.classList.remove('border-red-500');
-    parentElement.classList.remove('rounded-lg');
-    parentElement.classList.remove('error');
+    ['border-2', 'border-red-500', 'rounded-lg'].every(cls => parentElement.classList.contains(cls));
+
     grandParentElement.querySelector('p').remove();
   }
 }
