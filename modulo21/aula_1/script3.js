@@ -1,0 +1,3 @@
+function selectBestContry() {
+  return 'Argentina';
+}
