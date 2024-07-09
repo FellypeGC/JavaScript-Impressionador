@@ -8,4 +8,7 @@ function selectBestContry() {
 
 global.console.log('Oiiiii');
 
-console.log(global.addFiveNumbers(1, 2, 3, 4, 5))
+console.log(global.addFiveNumbers(1, 2, 3, 4, 5));
+
+console.log(module);
+
