@@ -13,9 +13,9 @@ server.on('request', async (request, response) => {
 
   try {
     await fs.stat(processPath + filePath);
-    const readStram = createReadStream(processPath + filePath);
+    const readStream = createReadStream(processPath + filePath);
     response.writeHead(200, {'Content-Type': 'text/html'});
-    readStram.pipe(response);
+    readStream.pipe(response);
   } catch {
     response.writeHead(404, {'Content-Type': 'text/plain'});
     response.write('File not found!');
