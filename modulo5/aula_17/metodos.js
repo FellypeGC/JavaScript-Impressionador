@@ -11,7 +11,7 @@ const carro = {
   marca: 'Toyota',
 }
 
-const joao = Object.create(pessoa); // Herdade de um objeto
+const joao = Object.create(pessoa); // Herdar de um objeto
 Object.assign(joao, carro); // Copiar as propriedades
 
 joao.falar();
