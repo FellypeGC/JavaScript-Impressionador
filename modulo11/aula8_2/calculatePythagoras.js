@@ -1,8 +1,12 @@
 function calculateSquareRoot(radicand) {
-  if (radicand < 0) {
-    throw new Error('O radicando deve ser real e positivo');
+  try {
+    if (radicand < 0) {
+      throw new Error('O radicando deve ser real e positivo');
+    }
+    return radicand ** (1 / 2);
+  } catch (error) {
+    console.log(error);
   }
-  return radicand ** (1 / 2);
 }
 
 function calculatePythagoras(side1, side2) {
