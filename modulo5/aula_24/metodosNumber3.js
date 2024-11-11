@@ -4,15 +4,15 @@ let notANumber2 = 0/0;
 let string = Number('Olá');
 let msg = 'Olá Impressionador';
 
-// console.log(notANumber, notANumber2, string);
+console.log(notANumber, notANumber2, string);
 
 // Verifica se o valor passado é NaN
-// console.log(Number.isNaN(notANumber));
-// console.log(Number.isNaN(notANumber2));
-// console.log(Number.isNaN(string));
-// console.log(Number.isNaN(42)); // são números - false
-// console.log(Number.isNaN(42.74637)); // são números - false
-// console.log(Number.isNaN(msg)); // falso (false - porque não verifica se é número - verifica se o valor é NaN)
+console.log(Number.isNaN(notANumber));
+console.log(Number.isNaN(notANumber2));
+console.log(Number.isNaN(string));
+console.log(Number.isNaN(42)); // são números - false
+console.log(Number.isNaN(42.74637)); // são números - false
+console.log(Number.isNaN(msg)); // falso (false - porque não verifica se é número - verifica se o valor é NaN)
 // isNaN() não verifica se o valor original é NaN; em vez disso, ele verifica se o resultado da conversão do valor
 // é NaN. A string não é NaN após a conversão, mas sim, um número (NaN); 
 
