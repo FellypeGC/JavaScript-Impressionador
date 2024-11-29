@@ -12,12 +12,37 @@
   --white: #fff;
 }
 
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--input-background);
+  border: 1px solid var(--input-border);
+  color: var(--white);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--focus);
+  outline: none;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   background: var(--background);
   margin: 0;
   padding: 0;
   color: var(--white);
+  
+  & h1, 
+  & h2, 
+  & h3 {
+    color: var(--text-realce);
+    font-size: 1.5rem;
+  }
 
   & .container {
     width: 80%;
@@ -46,14 +71,149 @@ body {
         border-radius: 5px;
       }
 
-      & .box2 {
-        max-width: 30%;
+      & .box1 {
+        & .meus-dados {
+          max-width: 600px;
+          margin: 20px auto;
+          padding: 20px;
+
+          & #formulario {
+            margin-top: 15px;
+  
+            & fieldset {
+              border: 1px solid var(--input-border);
+              padding: 10px;
+              border-radius: 5px;
+              margin-bottom: 10px;
+  
+              & legend {
+                color: var(--text-realce);
+                font-weight: 700;
+              }
+  
+              & .form-group {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                & label {
+                  display: block;
+                  margin-bottom: 5px;
+                  font-weight: 700;
+                  flex-basis: 100px;
+                }
+              }
+            }
+
+            #form-btn {
+              width: 100%;
+              padding: 10px;
+              font-size: 1rem;
+              background-color: var(--button-background);
+              color: var(--white);
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: var(--safe);
+              }
+            }
+          }
+        }
       }
 
-      & h1, 
-      & h2, 
-      & h3 {
-        color: var(--text-realce);
+      & .box2 {
+        max-width: 30%;
+
+        & .resumo {
+          display: flex;
+          flex-direction: column;
+
+          & .apply-discount {
+            border-top: 1px solid var(--input-border);
+            padding-top: 10px;
+            margin-top: 10px;
+
+            & .apply-discount-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              color: var(--text-realce);
+              cursor: pointer;
+            }
+
+            & .apply-discount-body {
+              /* display: none; */
+              margin-top: 10px;
+
+              & input {
+                width: 70%;
+                margin-right: 5px;
+              }
+
+              & #discount-btn {
+                background-color: var(--text-realce);
+                color: var(--white);
+                padding: 10px 20px;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+            }
+          }
+
+          & .icons {
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+
+            & i {
+              font-size: 20px;
+            }
+          }
+
+          & .garantia {
+            & .garantia_box {
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              border-top: 1px solid var(--input-border);
+              border-bottom: 1px solid var(--input-border);
+
+              & .safe {
+                color: var(--safe);
+              }
+
+              & .safe-img {
+                width: 300px;
+                border-radius: 10%;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & footer {
+      text-align: center;
+      margin-top: 20px;
+
+      & p {
+        color: var(--text);
+
+        & a {
+          color: var(--text-realce);
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
