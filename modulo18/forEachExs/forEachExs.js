@@ -33,3 +33,21 @@ pacotes.forEach((pacote) => {
 disponibilidade de cada pacote e armazene a contagem. Exiba no terminal o total de destinos e
 quais destinos possuem vagas disponíveis. */
 
+let contador = 0;
+let contadorDestinos = 0;
+let destinosDisponiveis = [];
+
+pacotes.forEach((pacote) => {
+  const vagaDisponivel = pacote.vagasDisponiveis;
+  if (vagaDisponivel == true) {
+    contador += 1;
+  } else {
+    return;
+  }
+  contadorDestinos += pacote.destino;
+  destinosDisponiveis.push(pacote.destino);
+});
+  
+console.log(
+  `Total de destinos: ${contadorDestinos}, Total de destinos com vagas disponíveis: ${contador}, Destinos disponíveis: ${destinosDisponiveis}`
+);
