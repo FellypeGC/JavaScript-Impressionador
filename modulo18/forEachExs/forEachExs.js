@@ -11,7 +11,8 @@ cada destino acompanhado do seu respectivo preço. */
 pacotes.forEach((pacote) => {
   const destinoPacote = pacote.destino;
   const precoPacote = pacote.preco;
-  // console.log(`Destino do pacote: ${destinoPacote}, Preço do pacote: ${precoPacote}`);
+
+  console.log(`Destino do pacote: ${destinoPacote}, Preço do pacote: ${precoPacote}`);
 });
 
 /* Exercício 2: Você precisa informar a disponibilidade de vagas para cada pacote. Para isso,
@@ -23,9 +24,9 @@ pacotes.forEach((pacote) => {
   const nomeDestino = pacote.destino;
 
   if (vagaDisponivel == true) {
-    // console.log(`Nome do destino: ${nomeDestino}. Há vaga disponível. (${vagaDisponivel})`);
+    console.log(`Nome do destino: ${nomeDestino}. Há vaga disponível. (${vagaDisponivel})`);
   } else {
-    // console.log(`Nome do destino: ${nomeDestino}. Não há vaga disponível. (${vagaDisponivel})`);
+    console.log(`Nome do destino: ${nomeDestino}. Não há vaga disponível. (${vagaDisponivel})`);
   }
 });
 
