@@ -1,7 +1,7 @@
 const medicamentos = [
   { nome: "Paracetamol", estoque: 150, preco: 5.99 },
-  { nome: "Amoxicilina", estoque: 0, preco: 9.5 },
-  { nome: "Ibuprofeno", estoque: 0, preco: 7.8 },
+  { nome: "Amoxicilina", estoque: 80, preco: 9.5 },
+  { nome: "Ibuprofeno", estoque: 200, preco: 7.8 },
 ];
 
 medicamentos.forEach((medicamento) => {
@@ -38,6 +38,6 @@ medicamentos.forEach((medicamento) => {
   if (medicamentosEmFalta > 0) {
     lackStock.textContent = `Medicamentos em falta: ${nomesMedicamentosEmFalta.join(', ')}`
   } else {
-    nomesMedicamentosEmFalta.textContent = `Todos os medicamentos estão disponíveis!`
+    lackStock.textContent = `Todos os medicamentos estão disponíveis!`;
   }
 });
