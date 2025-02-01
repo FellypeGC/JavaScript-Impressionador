@@ -1,14 +1,18 @@
 import './App.css';
 import IntermediateComponent from './IntermediateComponent';
+import UselessComponent from './UselessComponent';
 
 function App() {
-  // console.log('app renderizou');
+  const backgroundColor = 'darkblue';
   return (
     <div>
       <input type='text' />
-      <IntermediateComponent title={'Olá, impressionador!'} value={27}>
+      {/* <IntermediateComponent title={'Olá, impressionador!'} value={27}>
         <i>Novo valor informado</i>
-      </IntermediateComponent>
+      </IntermediateComponent> */}
+        <UselessComponent backgroundColor={backgroundColor}>
+          {<i>Novo valor informado</i>}
+        </UselessComponent>
       <input type='checkbox' />
     </div>
   );
