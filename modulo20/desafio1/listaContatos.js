@@ -16,8 +16,7 @@ const updateContact = (contacts, contactName, phone) => {
 }
 
 // saída [{ name: 'Ana', phone: '0000-0000' }] 
-const updatedContact = updateContact([{ name: 'Ana', phone: '1234-5678' 
-}], 'Ana', '0000-0000');
+const updatedContact = updateContact([{ name: 'Ana', phone: '1234-5678' }], 'Ana', '0000-0000');
 console.log("Contato atualizado:", updatedContact); 
 
 const removeContact = (contacts, contactName) => contacts.filter(contact => contact.name !== contactName);
