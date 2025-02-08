@@ -1,10 +1,13 @@
-import React from 'react';
-import Header from './components/utils/header';
+import Header from './components/header';
+import Home from './pages/HomePage/Home';
 
 const App = () => {
   return (
-    <Header />
+    <>
+      <Header />
+      <Home />
+    </>
   )
-}
+};
 
 export default App;
