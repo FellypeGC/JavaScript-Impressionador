@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Header from './components/utils/header';
 
 const App = () => {
-  return <h1 className='text-3xl underline'>Titulo da pagina</h1>
+  return (
+    <Header />
+  )
 }
 
-export default App
+export default App;
