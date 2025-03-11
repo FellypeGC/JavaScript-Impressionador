@@ -1,9 +1,9 @@
-import Component from "./Component.js";
+import { Component } from "./Component.js";
 
-class Input extends Component {
-  // constructor() {
-  //   super() {
-      
-  //   } 
-  // }
-}   
+export class Input extends Component {
+  constructor(type = "text", placeholder = "") {
+    super("input");
+    this.element.type = type;
+    this.element.placeholder = placeholder;
+  }
+}

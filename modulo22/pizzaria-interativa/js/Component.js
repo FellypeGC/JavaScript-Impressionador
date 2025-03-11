@@ -1,4 +1,4 @@
-export default class Component {
+export class Component {
   #element
   constructor(tagName) {
     this.tagName = tagName;
