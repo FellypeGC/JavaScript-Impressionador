@@ -73,3 +73,10 @@ export const catalog = [
     feminine: true,
   },
 ];
+
+// método reduce para transformar o array catalog em objeto, onde cada chave é o id do produto e o valor recebe o próprio produto.
+export const catalogIndexedById = catalog.reduce((acc, currentValue) => {
+  const { id } = currentValue;
+  acc[id] = currentValue;
+  return acc;
+}, {}); 
