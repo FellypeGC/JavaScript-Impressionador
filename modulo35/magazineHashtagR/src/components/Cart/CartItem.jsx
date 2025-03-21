@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { catalogIndexedById } from "../../utils/catalog";
 
 const CartItem = ({ id, amount}) => {
-  const { brand, price, name, image } = catalogIndexedById[id];
+  const { addToCart, decreaseUnit } = useContext(CartContext);
+  const { price, name, image } = catalogIndexedById[id];
 
   return (
     <article className="flex bg-stone-100 p-1 border rounded-mg relative">
@@ -17,11 +20,11 @@ const CartItem = ({ id, amount}) => {
         <p className="text-green-700 text-sm">{price}</p>
         
         <div className="flex text-slate-950 absolute right-2 bottom-0 mb-2">
-          <button className="border border-slate-400 hover:border-slate-900 mb-2">
+          <button onClick={() => decreaseUnit(id)} className="border border-slate-400 hover:border-slate-900 mb-2">
             <FontAwesomeIcon icon={faMinus} className="p-1" />
           </button>
           <p className="p-2 w-8 mx-auto">{amount}</p>
-          <button className="border border-slate-400 hover:border-slate-900 mb-2">
+          <button onClick={() => addToCart(id)} className="border border-slate-400 hover:border-slate-900 mb-2">
             <FontAwesomeIcon icon={faPlus} className="p-1" />
           </button>
         </div>

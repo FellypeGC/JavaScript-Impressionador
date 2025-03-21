@@ -11,11 +11,17 @@ const App = () => {
   const [cartItems, setCartItems] = useState({});
 
   const addToCart = (productId) => {
-    const updatedCart = { 
-      ...cartItems, 
-      [productId] : (cartItems[productId] ?? 0) + 1, 
-    };
-    setCartItems(updatedCart);
+    setCartItems({
+      ...cartItems,
+      [productId]: (cartItems[productId] ?? 0) + 1,
+    });
+  };
+
+  const decreaseUnit = (productId) => {
+    setCartItems({
+      ...cartItems,
+      [productId]: (cartItems[productId] ?? 0) - 1,
+    });
   };
 
   const toggleIsCartOpen = () => {
@@ -23,7 +29,7 @@ const App = () => {
   };
 
   return (
-    <CartContext.Provider value={ { isCartOpen, toggleIsCartOpen, cartItems, addToCart } }>
+    <CartContext.Provider value={ { isCartOpen, toggleIsCartOpen, cartItems, addToCart, decreaseUnit } }>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
