@@ -1,8 +1,27 @@
-import { rename } from "node:fs/promises";
+// import { selectBestContry as bestCountry } from "./script3.js";
 
-const oldName = process.argv[2] //['node', './script.js']
-const newName = process.argv[3];
+export function addFiveNumbers(n1, n2, n3, n4, n5) {
+  return n1 + n2 + n3 + n4 + n5;
+}
 
-rename(oldName, newName)
-  .then(() => console.log(`Arquivo renomeado para ${newName}`))
-  .catch(() => console.log(`Não foi possível renomear o arquivo ${oldName}`));
+function selectBestContry() {
+  return 'Brasil';
+}
+
+// global.console.log('Oiiiii');
+
+// console.log(global.addFiveNumbers(1, 2, 3, 4, 5));
+
+console.log(module.filename);
+
+const path = require('node:path');
+const pathObj = path.parse(module.filename);
+
+console.log(pathObj);
+
+// console.log(module);
+
+// const script3 = require('./script3');
+// console.log(script3.bestCountry());
+
+// console.log(selectBestContry());
