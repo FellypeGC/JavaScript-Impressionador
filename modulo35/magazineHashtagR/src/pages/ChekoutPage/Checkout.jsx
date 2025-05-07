@@ -1,5 +1,6 @@
 import FormInput from "../../utils/FormInput";
-import TotalPriceCell from "../../components/Cart/TotalPriceCell"
+import TotalPriceCell from "../../components/Cart/TotalPriceCell";
+import CartProducts from "../../components/Cart/CartProducts";
 
 const Checkout = () => {
   return (
@@ -101,8 +102,8 @@ const Checkout = () => {
 
         <p className="text-center text-sm font-bold text-slate-950 row-start-1">Seus Produtos</p>
 
-        <section className="row-span-4 p-2 bg-neutral-100 rounded-md">
-          
+        <section className="row-span-4 p-2 bg-neutral-100 rounded-md overflow-auto">
+          <CartProducts isHomePage={false} />
         </section>
         <section className="row-span-1 flex flex-col gap-2">
           <TotalPriceCell />
