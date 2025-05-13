@@ -15,8 +15,8 @@
 
     <nav class="navbar">
       <a href="#home">Home</a>
-      <a href="#About">Sobre</a>
-      <a href="#Menu">Menu</a>
+      <a href="#about">Sobre</a>
+      <a href="#menu">Menu</a>
       <a href="#products">Promoções</a>
       <a href="#review">Avaliações</a>
     </nav>
@@ -291,5 +291,13 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navbar = document.querySelector(".navbar");
+
+    menuBtn.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

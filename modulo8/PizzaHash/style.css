@@ -463,14 +463,13 @@ body {
     & .navbar {
       position: absolute;
       top: 100%;
-      right: 0;
       right: -100%;
-      background: var(--branco);
+      background: var(--bg);
       width: 30rem;
       height: calc(100vh - 9.5rem);
 
       & a {
-        color: var(--bg-card);
+        color: var(--branco);
         display: block;
         margin: 1.5rem;
         padding: .5rem;
@@ -483,6 +482,10 @@ body {
         display: inline-block;
       }
     }
+
+    & .active {
+      right: 0;
+    } 
   }
 
   .home {
