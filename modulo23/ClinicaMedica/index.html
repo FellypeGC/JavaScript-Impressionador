@@ -3,9 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Gestão de Consultas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Gestão de Consultas Médicas</h1>
+    <label for="selectPaciente">Selecione o Paciente:</label>
+    <select id="selectPaciente">
+      <!-- <option value="">--Selecione um paciente--</option> -->
+    </select>
+
+    <label for="selectMedico">Selecione o Médico</label>
+    <!-- <select id="selectMedico">--Selecione um médico--</select> -->
+
+    <label for="">Escolha a Data:</label>
+    <input type="date" id="inputData">
+
+    <button id="btnAgendar">Agendar Consulta</button>
+
+    <h2>Consultas Agendadas</h2>
+    <ul id="listaConsultas">
+      <li>Consultas - Agendamento 1</li>
+      <li>Consultas - Agendamento 2</li>
+      <li>Consultas - Agendamento 3</li>
+    </ul>
+  </div>
 </body>
 </html>
