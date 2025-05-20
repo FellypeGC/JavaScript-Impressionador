@@ -20,3 +20,39 @@
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
 }
+
+body {
+  background-image: url('assets/clinicaMedica.webp');
+  background-size: cover;
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  background: var(--color-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--color-green-primary);
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--color-gray-label);
+}
