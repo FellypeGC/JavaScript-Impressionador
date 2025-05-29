@@ -1,12 +1,25 @@
 import { Paciente } from "./Paciente.js";
 import { Medico } from "./Medico.js";
 
-async function carregarDados() {
-  const responseMedico = await fetch("./data/medicos.json").then(response => response.json());
-  console.log(responseMedico);
+let medicos = [];
+let pacientes = [];
 
-  const responsePaciente = await fetch("./data/pacientes.json").then(response => response.json());
-  console.log(responsePaciente);
+
+
+async function carregarDados() {
+  const responseMedico = await fetch("./data/medicos.json")
+  .then(response => response.json());
+  medicos = responseMedico.map((medico) => new Medico(
+    medico.nome,
+    medico.idade,
+    medico.especialidade,
+  ))
+  // console.log(responseMedico);
+
+  const responsePaciente = await fetch("./data/pacientes.json")
+  .then(response => response.json());
+  pacientes = responsePaciente.map(({ nome, idade, cpf }) => new Paciente(nome, idade, cpf));
+  // console.log(responsePaciente);
 }
 
 carregarDados();

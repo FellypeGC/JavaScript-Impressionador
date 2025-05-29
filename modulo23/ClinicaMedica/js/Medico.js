@@ -11,6 +11,6 @@ export class Medico extends Pessoa {
       setTimeout(() => resolve(
         `Consulta marcada com ${this.nome} para ${paciente} em ${data}`
       ), 1000);
-    })
+    });
   }
 }
