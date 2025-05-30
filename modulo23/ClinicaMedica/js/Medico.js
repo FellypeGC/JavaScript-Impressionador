@@ -9,7 +9,7 @@ export class Medico extends Pessoa {
   agendarConsulta(paciente, data) {
     return new Promise((resolve) => {
       setTimeout(() => resolve(
-        `Consulta marcada com ${this.nome} para ${paciente} em ${data}`
+        `Consulta marcada com ${this.nome} para ${paciente.nome} em ${data}`
       ), 1000);
     });
   }

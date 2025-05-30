@@ -18,7 +18,7 @@ export class DomHandler {
       <option value="">--Selecione um médico--</option> 
     `;
     medicos.forEach((medico) => {
-      console.log(medico)
+      // console.log(medico)
       const option = document.createElement("option");
       option.value = medico.nome;
       option.textContent = medico.nome;
@@ -33,7 +33,6 @@ export class DomHandler {
     const li = document.createElement("li");
     li.classList.add("consulta-item");
     li.textContent = mensagem;
-    listaConsulta.appendChild(li);
 
     // Criar botão de cancelar
     const btnCancelar = document.createElement("button");

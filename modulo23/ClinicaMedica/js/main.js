@@ -14,6 +14,7 @@ async function carregarDados() {
     medicos = responseMedico.map((medico) => new Medico(
       medico.nome,
       medico.idade,
+      medico.cpf,
       medico.especialidade,
     ))
     // console.log(responseMedico);
@@ -33,8 +34,7 @@ async function carregarDados() {
   }
 }
 
-carregarDados();
-
+// Função para agendar e exibir a consulta na tela
 function agendarConsulta() {
   const pacienteSelecionado = document.getElementById("selectPaciente").value;
   const medicoSelecionado = document.getElementById("selectMedico").value;
@@ -43,11 +43,26 @@ function agendarConsulta() {
   if (!pacienteSelecionado || !medicoSelecionado || !dataSelecionada) {
     alert("Por favor, selecione um paciente, um médico e uma data");
   }
+
+  const paciente = pacientes.find((p) => p.nome === pacienteSelecionado);
+  const medico = medicos.find((m) => m.nome === medicoSelecionado);
+
+  if (paciente && medico) {
+    medico.agendarConsulta(paciente, dataSelecionada).then((mensagem) => {
+      DomHandler.exibirConsulta(mensagem);
+    });
+  }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregarDados();
+  const btnAgendar = document.getElementById("btnAgendar");
+  btnAgendar.addEventListener("click", agendarConsulta);
+})
 
 // const medico = new Medico("Dr. Fernando Dias", 40, "123.455.786-90", "Pediatria");
 // const paciente = new Paciente("Fabio Duarte", 10, "123.456.789-65");
 
-medico.agendarConsulta(paciente, "10/05/2025").then((mensagem) => {
-  console.log(mensagem);
-})
+// medicos.agendarConsulta(pacientes, "10/05/2025").then((mensagem) => {
+//   console.log(mensagem);
+// })
