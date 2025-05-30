@@ -29,6 +29,15 @@ export class DomHandler {
   static exibirConsulta(mensagem) {
     const listaConsulta = document.getElementById("listaConsultas");
 
+    // Veridicar se já existe um elemento com a mesma mensagem/texto
+    const consultas = Array.from(listaConsulta.getElementsByTagName("li"));
+    const consultaExiste = consultas.some((li) => li.textContent.includes(mensagem));
+
+    if (consultaExiste) {
+      alert("Essa consulta já foi agendada!");
+      return;
+    }
+
     // Criar o elemento da lista
     const li = document.createElement("li");
     li.classList.add("consulta-item");

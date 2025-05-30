@@ -34,6 +34,14 @@ async function carregarDados() {
   }
 }
 
+//Função para formatar a data: YYYY-MM-DD para DD/MM/YYYY
+function formataData(data) {
+  const [ano, mes, dia] = data.split("-");
+  console.log(ano, mes, dia);
+  return `${dia}/${mes}/${ano}`;
+}
+
+
 // Função para agendar e exibir a consulta na tela
 function agendarConsulta() {
   const pacienteSelecionado = document.getElementById("selectPaciente").value;
@@ -48,7 +56,7 @@ function agendarConsulta() {
   const medico = medicos.find((m) => m.nome === medicoSelecionado);
 
   if (paciente && medico) {
-    medico.agendarConsulta(paciente, dataSelecionada).then((mensagem) => {
+    medico.agendarConsulta(paciente, formataData(dataSelecionada)).then((mensagem) => {
       DomHandler.exibirConsulta(mensagem);
     });
   }
