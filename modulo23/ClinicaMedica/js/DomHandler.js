@@ -1,5 +1,5 @@
 export class DomHandler {
-  static atualixarListaPaciente(pacientes) {
+  static atualizarListaPaciente(pacientes) {
     const selectPaciente = document.getElementById("selectPaciente");
     selectPaciente.innerHTML = `
       <option value="">--Selecione um paciente--</option>
@@ -11,8 +11,19 @@ export class DomHandler {
       selectPaciente.appendChild(option);
     });
   }
-  static atualixarListaMedico(medicos) {
 
+  static atualizarListaMedico(medicos) {
+    const selectMedico = document.getElementById("selectMedico");
+    selectMedico.innerHTML = `
+      <option value="">--Selecione um médico--</option> 
+    `;
+    medicos.forEach((medico) => {
+      console.log(medico)
+      const option = document.createElement("option");
+      option.value = medico.nome;
+      option.textContent = medico.nome;
+      selectMedico.appendChild(option);
+    })
   }
 }
 // const handler = new DomHandler;
