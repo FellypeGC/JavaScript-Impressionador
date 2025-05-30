@@ -35,8 +35,18 @@ async function carregarDados() {
 
 carregarDados();
 
-const medico = new Medico("Dr. Fernando Dias", 40, "123.455.786-90", "Pediatria");
-const paciente = new Paciente("Fabio Duarte", 10, "123.456.789-65");
+function agendarConsulta() {
+  const pacienteSelecionado = document.getElementById("selectPaciente").value;
+  const medicoSelecionado = document.getElementById("selectMedico").value;
+  const dataSelecionada = document.getElementById("inputData").value;
+
+  if (!pacienteSelecionado || !medicoSelecionado || !dataSelecionada) {
+    alert("Por favor, selecione um paciente, um médico e uma data");
+  }
+}
+
+// const medico = new Medico("Dr. Fernando Dias", 40, "123.455.786-90", "Pediatria");
+// const paciente = new Paciente("Fabio Duarte", 10, "123.456.789-65");
 
 medico.agendarConsulta(paciente, "10/05/2025").then((mensagem) => {
   console.log(mensagem);

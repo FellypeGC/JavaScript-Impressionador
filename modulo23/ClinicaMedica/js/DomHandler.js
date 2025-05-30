@@ -31,14 +31,14 @@ export class DomHandler {
 
     // Criar o elemento da lista
     const li = document.createElement("li");
-    li.className.add("consulta-item");
+    li.classList.add("consulta-item");
     li.textContent = mensagem;
     listaConsulta.appendChild(li);
 
     // Criar botão de cancelar
     const btnCancelar = document.createElement("button");
     btnCancelar.textContent = "Cancelar";
-    btnCancelar.className.add("btn-cancelar");
+    btnCancelar.classList.add("btn-cancelar");
 
     // Evento para remover a consulta de clicar no botão
     btnCancelar.addEventListener("click", () => {
@@ -50,4 +50,4 @@ export class DomHandler {
   }
 }
 // const handler = new DomHandler;
-// DomHandler.atualixarListaMedico
+// DomHandler.atualizarListaMedico
