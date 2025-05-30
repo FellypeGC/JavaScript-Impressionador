@@ -23,7 +23,30 @@ export class DomHandler {
       option.value = medico.nome;
       option.textContent = medico.nome;
       selectMedico.appendChild(option);
-    })
+    });
+  }
+
+  static exibirConsulta(mensagem) {
+    const listaConsulta = document.getElementById("listaConsultas");
+
+    // Criar o elemento da lista
+    const li = document.createElement("li");
+    li.className.add("consulta-item");
+    li.textContent = mensagem;
+    listaConsulta.appendChild(li);
+
+    // Criar botão de cancelar
+    const btnCancelar = document.createElement("button");
+    btnCancelar.textContent = "Cancelar";
+    btnCancelar.className.add("btn-cancelar");
+
+    // Evento para remover a consulta de clicar no botão
+    btnCancelar.addEventListener("click", () => {
+      li.remove();
+    });
+
+    li.appendChild(btnCancelar);
+    listaConsulta.appendChild(li);
   }
 }
 // const handler = new DomHandler;
