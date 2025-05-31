@@ -1,6 +1,6 @@
 import { useCartContext } from "../../contexts/CartContext";
 import CartItem from "./CartItem";
-import SimpleCartItem from "./SImpleCartItem";
+import SimpleCartItem from "./SimpleCartItem";
 
 const CartProducts = ({ isHomePage = true }) => {
   const { cartItems } = useCartContext();
