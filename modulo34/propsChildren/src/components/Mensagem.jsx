@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Mensagem = (props) => {
+export const Mensagem = ({ children }) => {
   return (
     <div>
-      {props.children}
+      {children}
     </div>
   )
 }
