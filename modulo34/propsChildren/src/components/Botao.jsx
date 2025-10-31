@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Botao = ({ text, onClick }) => {
+export const Botao = ({ text, ...props }) => { //{ text, onClick, type, disabled }
   return (
-    <>
-      <button onClick={onClick}>{text}</button>
+    <> 
+      {/* <button onClick={onClick} type={type} disabled={disabled}>{text}</button> */}
+      <button { ...props }>{text}</button>
     </>
   )
 }
