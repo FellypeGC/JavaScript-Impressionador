@@ -6,15 +6,18 @@ export const Botao = ({ text, ...props }) => { //{ text, onClick, type, disabled
     <> 
       {/* <button onClick={onClick} type={type} disabled={disabled}>{text}</button> */}
       {/* <button { ...props }>{text}</button> */}
-      <div className='container'>
-        <button style={
-          {
-            color: "white",
-            cursor: "pointer",
-            padding: "10px",
-            backgroundColor: "red",
-            fontSize: "16px",
-          }}>
+      <div className={styles.container}>
+        <button className={styles.botao}
+          //style={
+          //{
+            // color: "white",
+            // cursor: "pointer",
+            // padding: "10px",
+            // backgroundColor: "red",
+            // fontSize: "16px",
+          //}
+          //</div> }
+        >
           {text}
         </button>
       </div>
