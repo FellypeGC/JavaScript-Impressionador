@@ -1,7 +1,8 @@
 import React from 'react'
 import { Botao } from "./components/Botao"
-import "./style.css"
 import { Mensagem } from './components/Mensagem'
+// import "./style.css"
+import "./global.css"
 
 export const App = () => {
   const ativo = true;
