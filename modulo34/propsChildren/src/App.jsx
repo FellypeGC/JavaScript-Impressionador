@@ -1,7 +1,7 @@
 import React from 'react'
 import { Botao } from "./components/Botao"
 import { Mensagem } from './components/Mensagem'
-// import "./style.css"
+import "./style.css"
 import "./global.css"
 
 export const App = () => {
