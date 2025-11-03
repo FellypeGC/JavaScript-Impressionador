@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaClipboardList } from "react-icons/fa"
 import "./OrderCard.css"
+import { OrderList } from './OrderList'
 
 export const OrderCard = () => {
   return (
@@ -9,6 +10,9 @@ export const OrderCard = () => {
         <FaClipboardList className='icon' />
         Pedidos do Dia
       </h2>
+
+      {/* Renderizar Segundo Componente */}
+      <OrderList />
     </div>
   )
 }
