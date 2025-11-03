@@ -12,6 +12,8 @@
   min-height: 100vh;
   font-family: sans-serif;
   /* Flexbox para distribuir os perfis */
-
-  
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
