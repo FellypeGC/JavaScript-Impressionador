@@ -37,7 +37,7 @@ export const Alert = (props) => {
         <input type="text" placeholder='Digite algo aqui...' onKeyDown={handleOnKeyDown} />
       )}
 
-      {props.tipo !== "onKeyDown" (
+      {props.tipo !== "onKeyDown" && (
         <button 
           onClick={handleClick} 
           onMouseOver={handleOnMouseOver} 
@@ -45,9 +45,7 @@ export const Alert = (props) => {
         >
           {props.children}
         </button>
-      ) }
-
-      
+      )}
     </div>
   )
 }
