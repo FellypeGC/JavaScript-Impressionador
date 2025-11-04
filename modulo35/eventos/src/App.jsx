@@ -1,5 +1,6 @@
 import React from 'react'
 import { Alert } from './components/Alert'
+import { GlobalEvent } from './components/GlobalEvent'
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
       <br />
       <Alert tipo="onKeyDown">Você pressionou a tecla no input!</Alert>
       <br />
+      <GlobalEvent />
     </div>
   )
 }

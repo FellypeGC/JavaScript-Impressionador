@@ -27,7 +27,9 @@ export const Alert = (props) => {
 
   const handleOnKeyDown = (event) => {
     if (props.tipo === "onKeyDown") {
-      alert(`Você pressionou a tecla ${event.key}`);
+      if (event.key === "Enter") {
+        alert(`Você pressionou a tecla ${event.key}`);
+      }
     }
   }
 
