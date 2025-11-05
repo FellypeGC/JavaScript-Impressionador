@@ -5,12 +5,12 @@ export const Contador = () => {
 
   // Função aumentar
   const handleAumentar = () => {
-    setContador(contador + 1);
+    setContador((prevValue) => prevValue + 1);
   }
 
   // Função diminuir
   const handleDiminuir = () => {
-    setContador(contador - 1);
+    setContador((prev) => prev - 1);
   }
 
   // Função zerar
