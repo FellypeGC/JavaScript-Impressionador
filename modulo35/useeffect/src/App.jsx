@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+  const [mensagem, setMensagem] = useState("");
+  const [numero, setNumero] = useState(0);
+
+  useEffect(() => {
+    setMensagem(`O número atual é: ${numero}`);
+  }, [numero]); // useEffect depender do número
+
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     console.log(`Rodando a cada segundo ${timer}`);
+  //   }, 1000);
+
+  //   return () => {
+  //     clearInterval(timer);
+  //   }
+  // }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>UseEffect</h1>
+      <p>{mensagem}</p>
+      <button onClick={() => setNumero(numero + 1)}>Aumentar</button>
     </>
   )
 }
 
-export default App
+
+// Só na montagem - []
+// Toda vez que algo muda - [dependencia]
