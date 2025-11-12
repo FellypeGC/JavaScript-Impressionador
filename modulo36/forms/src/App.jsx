@@ -1,4 +1,5 @@
 import React from 'react'
+import "./App.css"
 
 export const App = () => {
   return (
@@ -11,7 +12,7 @@ export const App = () => {
         <span className='error'>O nome do curso é obrigatório</span>
 
         {/* Campo de data de início */}
-        <input type="text" lang='pt_BR' />
+        <input type="date" lang='pt_BR' />
 
         {/* Seleção de Categoria */}
         <select>
