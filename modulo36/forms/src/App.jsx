@@ -1,14 +1,16 @@
-import React from 'react'
 import "./App.css"
+import React, { useState } from 'react'
 
 export const App = () => {
+  const [nome, setNome] = useState("");
+
   return (
     <div className="form-container">
-      <h1>Cadastro de Curso</h1>
+      <h1>Cadastro de Curso {nome}</h1>
 
       <form>
         {/* Campo de entrada de nome do curso */}
-        <input type="text" placeholder='Nome do curso' />
+        <input type="text" placeholder='Nome do curso' onChange={(event) => {setNome(event.target.value)}} />
         <span className='error'>O nome do curso é obrigatório</span>
 
         {/* Campo de data de início */}
