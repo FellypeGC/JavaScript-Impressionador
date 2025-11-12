@@ -4,11 +4,16 @@ import React, { useState } from 'react'
 export const App = () => {
   const [nome, setNome] = useState("");
 
+  // Função para lidar com o evento do formulário
+  const onSubmit = (event) => {
+    event.preventDefault();
+  }
+
   return (
     <div className="form-container">
       <h1>Cadastro de Curso {nome}</h1>
 
-      <form>
+      <form onSubmit={onSubmit}>
         {/* Campo de entrada de nome do curso */}
         <input type="text" placeholder='Nome do curso' onChange={(event) => {setNome(event.target.value)}} />
         <span className='error'>O nome do curso é obrigatório</span>
@@ -29,6 +34,7 @@ export const App = () => {
         <textarea placeholder='Descrição do curso' rows={4} />
 
         {/* Botão */}
+        {/* <button type='submit' onClick={onSubmit}>Cadastrar</button> */}
         <button type='submit'>Cadastrar</button>
       </form>
     </div>
