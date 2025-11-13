@@ -35,7 +35,7 @@ export const App = () => {
           onChange={(event) => setCategoria(event.target.value)} 
           value={categoria}
         >
-          <option value="">Escolha a categoria...</option>
+          <option value="" disabled selected>Escolha a categoria...</option>
           <option value="programacao">Programação</option>
           <option value="design">Design</option>
           <option value="marketing">Marketing</option>
