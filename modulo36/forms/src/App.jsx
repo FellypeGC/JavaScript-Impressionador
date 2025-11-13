@@ -3,10 +3,14 @@ import React, { useState } from 'react'
 
 export const App = () => {
   const [nome, setNome] = useState("");
+  const [categoria, setCategoria] = useState("");
 
   // Função para lidar com o evento do formulário
   const onSubmit = (event) => {
     event.preventDefault();
+
+    setNome("");
+    setCategoria("");
   }
 
   return (
@@ -15,14 +19,22 @@ export const App = () => {
 
       <form onSubmit={onSubmit}>
         {/* Campo de entrada de nome do curso */}
-        <input type="text" placeholder='Nome do curso' onChange={(event) => {setNome(event.target.value)}} />
+        <input 
+          type="text" 
+          placeholder='Nome do curso'
+          value={nome} 
+          onChange={(event) => {setNome(event.target.value)}} 
+        />
         <span className='error'>O nome do curso é obrigatório</span>
 
         {/* Campo de data de início */}
         <input type="date" lang='pt_BR' />
 
         {/* Seleção de Categoria */}
-        <select>
+        <select 
+          onChange={(event) => setCategoria(event.target.value)} 
+          value={categoria}
+        >
           <option value="">Escolha a categoria...</option>
           <option value="programacao">Programação</option>
           <option value="design">Design</option>
