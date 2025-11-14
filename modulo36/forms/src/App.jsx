@@ -7,7 +7,7 @@ export const App = () => {
   // Aqui definimos os valores padrão do formulário e pegamos os métodos necessários
   // control é usado para controlar os componentes/elementos do formulário
   // handleSubmit é uma função que lida com o envio do formulário
-  const { control, handleSubmit, reset, register } = useForm({
+  const { control, handleSubmit, reset, register, formState: { errors } } = useForm({
     defaultValues: {
       nomeCurso: "",
       data: "",
@@ -48,16 +48,20 @@ export const App = () => {
             required: "O nome do curso é obrigatório", 
           })}
         />
-        <span className='error'>O nome do curso é obrigatório</span>
+
+        {errors.nomeCurso && <span className='error'>{errors.nomeCurso.message}</span>}
 
         {/* Campo de data de início */}
         <Controller 
           control={control}
           name="data"
+          rules={{ required: true }}
           render={({ field }) => (
             <input type="date" placeholder="Data de início" { ...field } />
           )}
         />
+
+        {errors.data && <span className="error">A data de início é obrigatória</span>}
 
         {/* Seleção de Categoria */}
         <Controller 
