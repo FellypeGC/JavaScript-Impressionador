@@ -7,7 +7,7 @@ export const App = () => {
   // Aqui definimos os valores padrão do formulário e pegamos os métodos necessários
   // control é usado para controlar os componentes/elementos do formulário
   // handleSubmit é uma função que lida com o envio do formulário
-  const { control, handleSubmit, reset, register, formState: { errors } } = useForm({
+  const { control, handleSubmit, reset, register, formState: { errors, isSubmitting } } = useForm({
     defaultValues: {
       nomeCurso: "",
       data: "",
@@ -18,7 +18,9 @@ export const App = () => {
   // Função para lidar com o evento do formulário
   // Aqui lapenas logamos os dados no console
   // Em um caso real, você poderia enviar esses dados para o servidor
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    // Simula o envio dos dados para um servidor
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(data);
 
     reset(); // Reseta os campos do formulário após o envio
@@ -89,7 +91,9 @@ export const App = () => {
 
         {/* Botão */}
         {/* <button type='submit' onClick={onSubmit}>Cadastrar</button> */}
-        <button type='submit'>Cadastrar</button>
+        <button type='submit' disabled={isSubmitting}>
+          {isSubmitting ? "Enviando..." : "Cadastrar"}
+          </button>
       </form>
     </div>
   )
