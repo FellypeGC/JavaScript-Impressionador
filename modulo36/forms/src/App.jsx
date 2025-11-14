@@ -7,7 +7,7 @@ export const App = () => {
   // Aqui definimos os valores padrão do formulário e pegamos os métodos necessários
   // control é usado para controlar os componentes/elementos do formulário
   // handleSubmit é uma função que lida com o envio do formulário
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, reset, register } = useForm({
     defaultValues: {
       nomeCurso: "",
       data: "",
@@ -32,7 +32,7 @@ export const App = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Campo de entrada de nome do curso */}
         {/* O Controller é usado para conectar o campo de entrada do nome do curso ao React Hook Form */}
-        <Controller 
+        {/* <Controller 
           control={control} // Controla o estado do formulário
           name="nomeCurso" // Nome do campo no formulário
           render={({ field }) => (
@@ -40,6 +40,13 @@ export const App = () => {
             // o field contém os métodos necessários como onChange, onBlur, value, ref
             <input type="text" placeholder='Nome do curso' { ...field } />
           )} // Renderiza o campo de entrada e conecta os métodos do React Hook Form
+        /> */}
+        <input 
+          type="text" 
+          placeholder='Nome do curso' 
+          {...register("nomeCurso", {
+            required: "O nome do curso é obrigatório", 
+          })}
         />
         <span className='error'>O nome do curso é obrigatório</span>
 
