@@ -1,6 +1,10 @@
 import "./App.css"
 import React from 'react'
 import { Controller, useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+const schema = yup.object({});
 
 export const App = () => {
   // useForm - hook principal que inicia o formulário
@@ -14,6 +18,7 @@ export const App = () => {
       categoria: "",
       descricao: "",
     },
+    resolver: yupResolver(schema),
   });
   // Função para lidar com o evento do formulário
   // Aqui lapenas logamos os dados no console
