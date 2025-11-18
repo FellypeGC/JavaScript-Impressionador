@@ -4,7 +4,26 @@ import { Controller, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
-const schema = yup.object({});
+const schema = yup.object({
+  nomeCurso: yup
+    .string()
+    .required("O nome do curso é obrigatório")
+    .min(3, "O nome deve conter pelo menos 3 caracteres")
+    .max(50, "O nome pode ter no máximo 50 caracteres"),
+  data: yup
+    .date("Formato de data inválido")
+    .required("A data de início é obrigatória")
+    .typeError("Insira uma data válida"),
+  categoria: yup
+    .string()
+    .required("Escolha uma categoria")
+    .oneOf(["programacao", "design", "marketing", "outros"], "Categoria Inválida"),
+  descricao: yup
+    .string()
+    .required("A descrição é obrigatória")
+    .min(10, "A descrição deve ter pelo menos 10 caracteres")
+    .max(70, "A descrição deve ter no máximo 70 caracteres"),
+});
 
 export const App = () => {
   // useForm - hook principal que inicia o formulário
@@ -20,6 +39,8 @@ export const App = () => {
     },
     resolver: yupResolver(schema),
   });
+
+
   // Função para lidar com o evento do formulário
   // Aqui lapenas logamos os dados no console
   // Em um caso real, você poderia enviar esses dados para o servidor
@@ -62,7 +83,7 @@ export const App = () => {
         <Controller 
           control={control}
           name="data"
-          rules={{ required: true }}
+          // rules={{ required: true }}
           render={({ field }) => (
             <input type="date" placeholder="Data de início" { ...field } />
           )}
@@ -85,6 +106,8 @@ export const App = () => {
           )}
         />
 
+        {errors.categoria && <span className='error'>{errors.categoria.message}</span>}
+
         {/* Campo de descrição */}
         <Controller 
           control={control}
@@ -93,6 +116,8 @@ export const App = () => {
             <textarea placeholder='Descrição do curso' rows={4} { ...field } />
           )}
         />
+
+        {errors.descricao && <span className='error'>{errors.descricao.message}</span>}
 
         {/* Botão */}
         {/* <button type='submit' onClick={onSubmit}>Cadastrar</button> */}
