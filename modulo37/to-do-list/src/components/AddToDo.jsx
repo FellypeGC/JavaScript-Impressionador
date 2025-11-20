@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./AddToDo.css"
 
 export const AddToDo = ({ onAddTodo }) => {
   const [inputValue, setInputValue] = useState("");
@@ -23,15 +24,17 @@ export const AddToDo = ({ onAddTodo }) => {
 
   return (
     <form className="add-todo-form" onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        placeholder='Digite uma nova tarefa...' 
-        className='todo-input' 
-        onChange={handleChange}
-        value={inputValue}
-      />
+      <div className="input-container">
+        <input 
+          type="text" 
+          placeholder='Digite uma nova tarefa...' 
+          className='todo-input' 
+          onChange={handleChange}
+          value={inputValue}
+        />
 
-      {errorMessage && <p className='error-message'>{errorMessage}</p>}
+        {errorMessage && <p className='error-message'>{errorMessage}</p>}
+      </div>
 
       <button type='submit' className='add-button'>Adicionar</button>
     </form>
