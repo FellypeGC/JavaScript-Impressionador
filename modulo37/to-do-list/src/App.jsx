@@ -1,7 +1,8 @@
-import { useState } from "react"
 import "./App.css"
-import { AddToDo } from "./components/AddToDo"
 import './index.css'
+import { useState } from "react"
+import { AddToDo } from "./components/AddToDo"
+import { TodoList } from "./components/TodoList"
 
 export const App = () => {
   const [todos, setTodos] = useState([
@@ -23,8 +24,8 @@ export const App = () => {
       <h1 className="app-title">Lista de Tarefas</h1>
       {/* Componente - Input Botão */}
       <AddToDo onAddTodo={addTodo} />
-        {todos.map((todo) => todo.text)}
       {/* Componente - Lista de componentes */}
+      <TodoList todos={todos} />
     </div>
   )
 }
