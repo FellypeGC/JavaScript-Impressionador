@@ -23,9 +23,9 @@ export const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
 
-  // const toggleTodo = (id) => {
-
-  // }
+  const toggleTodo = (id) => {
+    setTodos(todos.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+  }
 
   return (
     <div className="container">
@@ -33,7 +33,7 @@ export const App = () => {
       {/* Componente - Input Botão */}
       <AddToDo onAddTodo={addTodo} />
       {/* Componente - Lista de componentes */}
-      <TodoList todos={todos} onDeleteTodo={deleteTodo} />
+      <TodoList todos={todos} onDeleteTodo={deleteTodo} onToggleTodo={toggleTodo} />
     </div>
   )
 }
