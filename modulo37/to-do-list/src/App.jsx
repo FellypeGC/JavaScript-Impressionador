@@ -19,13 +19,21 @@ export const App = () => {
     setTodos([...todos, newTodo]);
   }
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
+
+  // const toggleTodo = (id) => {
+
+  // }
+
   return (
     <div className="container">
       <h1 className="app-title">Lista de Tarefas</h1>
       {/* Componente - Input Botão */}
       <AddToDo onAddTodo={addTodo} />
       {/* Componente - Lista de componentes */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDeleteTodo={deleteTodo} />
     </div>
   )
 }

@@ -7,12 +7,12 @@ export const TodoItem = ({ todo, onToggle, onDelete }) => {
         type="checkbox" 
         className='todo-checkbox' 
         checked={todo.completed} 
-        onChange={() => onToggle()} 
+        onChange={() => onToggle(todo.id)} 
       />
 
       <span className='todo-text'>{todo.text}</span>
 
-      <button className='delete-button' onClick={() => onDelete()}>Remover</button>
+      <button className='delete-button' onClick={() => onDelete(todo.id)}>Remover</button>
     </div>
   )
 }
