@@ -1,6 +1,6 @@
 import "./App.css"
 import './index.css'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AddToDo } from "./components/AddToDo"
 import { TodoList } from "./components/TodoList"
 
@@ -9,6 +9,23 @@ export const App = () => {
     { id: 1, text: "Exemplo de tarefa", completed: false }, 
     { id: 2, text: "Aprender React", completed: false }
   ]);
+
+  useEffect(() => {
+    console.log("Tarefas Atualizadas: ", todos);
+  }, [todos]);
+
+  // Carregar do localStorage quando o app abrir
+  useEffect(() => {
+    const tarefasSalvas = localStorage.getItem("tarefas");
+    if (tarefasSalvas) {
+      setTodos(JSON.parse(tarefasSalvas));
+    }
+  }, []);
+
+  // Salvas no localStorage
+  useEffect(() => {
+    localStorage.setItem("tarefas", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (text) => {
     const newTodo = {
