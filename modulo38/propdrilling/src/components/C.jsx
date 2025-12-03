@@ -1,11 +1,12 @@
 import React from 'react'
 import { D } from './D'
 
-export const C = ({ nome, idade, cidade }) => {
+export const C = ({ children }) => { // nome, idade, cidade
   return (
     <div>
       <h2>Componente C</h2>
-      <D nome={nome} idade={idade} cidade={cidade} />
+      {/* <D nome={nome} idade={idade} cidade={cidade} /> */}
+      {children}
     </div>
   )
 }
