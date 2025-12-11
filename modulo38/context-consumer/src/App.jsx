@@ -1,7 +1,12 @@
 import React from 'react'
+import { ContadorHook } from './components/ContadorHook'
+import { ContadorConsumer } from './components/ContadorConsumer'
 
 export const App = () => {
   return (
-    <div>App</div>
+    <>
+      <ContadorHook />
+      <ContadorConsumer />
+    </>
   )
 }
