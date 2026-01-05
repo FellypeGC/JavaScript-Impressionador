@@ -2,6 +2,8 @@ import React from 'react'
 
 export const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <h1>React Router</h1>
+    </div>
   )
 }
