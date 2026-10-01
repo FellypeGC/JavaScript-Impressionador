@@ -9,6 +9,7 @@ export const App = () => {
         <Link to="/">Home</Link>
         <Link to="/about">Sobre</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/">Contact</Link>
       </nav>
       <AppRoutes />
     </>

@@ -2,13 +2,16 @@ import { Routes, Route } from "react-router";
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
+import { NotFound } from "../pages/NotFound";
 
 export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" index element={<Home />} />
-      <Route path="/about" index element={<About />} />
-      <Route path="/contact" index element={<Contact />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   )
 }
