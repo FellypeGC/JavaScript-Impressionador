@@ -1,10 +1,5 @@
 import { Link } from "react-router"
-
-const products = [
-  { id: "1", name: "Notebook Gamer" },
-  { id: "2", name: "Mouse Óptico" },
-  { id: "3", name: "Teclado Mecânico" },
-]
+import products from "../assets/data"
 
 export const Products = () => {
   return (
@@ -13,7 +8,7 @@ export const Products = () => {
       <ul>
         {products.map((product) => (
           <li key={product.id}>
-            <Link to="/products">{product.name}</Link>
+            <Link to={`/products/${product.id}`}>{product.name}</Link>
           </li>
         ))}
       </ul>
