@@ -32,3 +32,4 @@ export const Details = () => {
 };
 
 // useParams -> hook to catch dynamic params data from the URL
+// to-do: implement filters with useSearchParams
