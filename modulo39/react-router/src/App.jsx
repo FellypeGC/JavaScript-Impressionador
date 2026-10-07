@@ -1,16 +1,11 @@
 import "./global.css"
 import { AppRoutes } from "./routes/AppRoutes"
-import { Link } from "react-router"
+import { Navigation } from "./components/Navigation"
 
 export const App = () => {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">Sobre</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/">Contact</Link>
-      </nav>
+      <Navigation />
       <AppRoutes />
     </>
   )
