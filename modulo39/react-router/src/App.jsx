@@ -1,10 +1,10 @@
 import "./global.css"
-import { AppRoutes } from "./routes/AppRoutes"
+import { JsRoutes } from "./routes/JsRoutes"
 
 export const App = () => {
   return (
     <>
-      <AppRoutes />
+      <JsRoutes />
     </>
   )
 }
