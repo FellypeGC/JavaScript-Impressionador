@@ -1,9 +1,10 @@
-import { Link, useParams } from "react-router";
+import { Link, useParams, useNavigate } from "react-router";
 import products from "../assets/data";
 
 export const Details = () => {
   // const params = useParams();
   // console.log(params.id);
+  const navigate = useNavigate();
   const { id } = useParams();
 
   if (id) {
@@ -25,6 +26,9 @@ export const Details = () => {
         <p>Categoria: {product?.categoria}</p>
         <p>Preço: {product?.price}</p>
         <p>Descrição: {product?.description}</p>
+        <br />
+
+        <button onClick={() => navigate(`/products/${product?.id}/info`)}>Informações</button>
         <Link to="/products">Voltar Produtos</Link>
       </div>
     );
