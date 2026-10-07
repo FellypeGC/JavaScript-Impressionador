@@ -7,6 +7,8 @@ import { NotFound } from "../pages/NotFound";
 import { Products } from "../pages/Products";
 import { Details } from "../pages/Details";
 import { InfoProducts } from "../pages/InfoProducts";
+import { Login } from "../pages/Login";
+import { PrivateRoute } from "./PrivateRoute";
 
 export const JsRoutes = () => {
   const routes = useRoutes([
@@ -21,6 +23,16 @@ export const JsRoutes = () => {
         { path: "products/:id", element: <Details /> },
         { path: "products/:id/info", element: <InfoProducts /> },
       ],
+    },
+    { path: "/login/", element: <Login /> },
+    // Private route
+    {
+      path: "/admin",
+      element: (
+        <PrivateRoute>
+          <Admin />
+        </PrivateRoute>
+      ),
     },
     { path: "*", element: <NotFound /> },
   ]);
