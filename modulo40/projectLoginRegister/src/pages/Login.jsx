@@ -20,8 +20,9 @@ export const Login = () => {
         <InputField
           label="Senha"
           id="password"
+          type="password"
           name="password"
-          autoComplete="password"
+          autoComplete="current-password"
           placeholder="Digite sua senha"
           register={() => {}}
         />
