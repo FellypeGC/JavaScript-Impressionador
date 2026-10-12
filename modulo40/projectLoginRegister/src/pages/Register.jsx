@@ -2,9 +2,26 @@ import { InputField } from "../components/InputField";
 import { Link } from "react-router";
 
 export const Register = () => {
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+
+    alert("Conta criada com sucesso!");
+
+    reset();
+  }
+
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form action="" className="bg-white p-8 rounded-2xl shadow-md w-96">
+      <form action="" className="bg-white p-8 rounded-2xl shadow-md w-96" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
 
         <InputField
@@ -14,7 +31,8 @@ export const Register = () => {
           name="name"
           autoComplete="username"
           placeholder="Digite seu nome"
-          register={() => {}}
+          register={register}
+          errors={errors.name}
         />
 
         <InputField
@@ -24,7 +42,8 @@ export const Register = () => {
           name="email"
           autoComplete="email"
           placeholder="Digite seu e-mail"
-          register={() => {}}
+          register={register}
+          errors={errors.email}
         />
 
         <InputField
@@ -34,7 +53,8 @@ export const Register = () => {
           name="password"
           autoComplete="new-password"
           placeholder="Digite sua senha"
-          register={() => {}}
+          register={register}
+          errors={errors.password}
         />
 
         <InputField
@@ -44,7 +64,8 @@ export const Register = () => {
           name="confirmPassword"
           autoComplete="new-password"
           placeholder="Digite sua senha"
-          register={() => {}}
+          register={register}
+          errors={errors.confirmPasword}
         />
 
         <button
