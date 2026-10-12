@@ -1,5 +1,5 @@
 import { InputField } from "../components/InputField";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -18,11 +18,20 @@ const registerSchema = yup.object({
 });
 
 export const Register = () => {
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setMessage(location.state.message);
+    }
+  }, [location]);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     defaultValues: {
       name: "",
@@ -34,11 +43,23 @@ export const Register = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const userEmailExists = users.find((user) => user.email === data.email);
 
-    alert("Conta criada com sucesso!");
+    if (userEmailExists) {
+      setMessage("Já existe um usuário com esse e-mail!");
+      return;
+    }
 
-    reset();
+    users.push({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    navigate("/login");
   };
 
   return (
@@ -49,6 +70,8 @@ export const Register = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+
+        {message && <p className="text-red-500">{message}</p>}
 
         <InputField
           label="Nome"
