@@ -1,13 +1,29 @@
 import { InputField } from "../components/InputField";
 import { Link } from "react-router";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const loginSchema = yup.object({
+  email: yup.string().email("E-mail inválido").required("E-mail é obrigatório"),
+  password: yup
+    .string()
+    .required("Senha é obrigatória")
+    .min(6, "A senha deve ter pelo menos 6 caracteres"),
+});
 
 export const Login = () => {
-  const { handleSubmit, register, formState: { errors }, reset } = useForm({
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    reset,
+  } = useForm({
     defaultValuess: {
       email: "",
-      password: ""
-    }
+      password: "",
+    },
+    resolver: yupResolver(loginSchema),
   });
 
   const onSubmit = (data) => {
@@ -16,11 +32,15 @@ export const Login = () => {
     alert("Login realizado com sucesso!");
 
     reset();
-  }
+  };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100" onSubmit={handleSubmit(onSubmit)}>
-      <form action="" className="bg-white p-8 rounded-2xl shadow-md w-96">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <form
+        action=""
+        className="bg-white p-8 rounded-2xl shadow-md w-96"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
         <InputField
@@ -32,7 +52,7 @@ export const Login = () => {
           placeholder="Digite seu e-mail"
           register={register}
           error={errors.email}
-          />
+        />
 
         <InputField
           label="Senha"

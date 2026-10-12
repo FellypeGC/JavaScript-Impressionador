@@ -1,14 +1,36 @@
 import { InputField } from "../components/InputField";
 import { Link } from "react-router";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const registerSchema = yup.object({
+  name: yup.string().required("Nome é obrigatório"),
+  email: yup.string().email("E-mail inválido").required("E-mail é obrigatório"),
+  password: yup
+    .string()
+    .required("Senha é obrigatória")
+    .min(6, "A senha deve ter pelo menos 6 caracteres"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "As senhas devem ser iguais")
+    .required("Confirmação de senha é obrigatória"),
+});
 
 export const Register = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     defaultValues: {
       name: "",
       email: "",
       password: "",
-      confirmPassword: ""
-    }
+      confirmPassword: "",
+    },
+    resolver: yupResolver(registerSchema),
   });
 
   const onSubmit = (data) => {
@@ -17,11 +39,15 @@ export const Register = () => {
     alert("Conta criada com sucesso!");
 
     reset();
-  }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form action="" className="bg-white p-8 rounded-2xl shadow-md w-96" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        action=""
+        className="bg-white p-8 rounded-2xl shadow-md w-96"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
 
         <InputField
@@ -32,7 +58,7 @@ export const Register = () => {
           autoComplete="username"
           placeholder="Digite seu nome"
           register={register}
-          errors={errors.name}
+          error={errors.name}
         />
 
         <InputField
@@ -43,7 +69,7 @@ export const Register = () => {
           autoComplete="email"
           placeholder="Digite seu e-mail"
           register={register}
-          errors={errors.email}
+          error={errors.email}
         />
 
         <InputField
@@ -54,7 +80,7 @@ export const Register = () => {
           autoComplete="new-password"
           placeholder="Digite sua senha"
           register={register}
-          errors={errors.password}
+          error={errors.password}
         />
 
         <InputField
@@ -65,7 +91,7 @@ export const Register = () => {
           autoComplete="new-password"
           placeholder="Digite sua senha"
           register={register}
-          errors={errors.confirmPasword}
+          error={errors.confirmPassword}
         />
 
         <button
@@ -84,4 +110,4 @@ export const Register = () => {
       </form>
     </div>
   );
-}
+};
