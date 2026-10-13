@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { InputField } from "../components/InputField";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -13,6 +14,17 @@ const loginSchema = yup.object({
 });
 
 export const Login = () => {
+  const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setMessage(location.state.message);
+    }
+  }, [location]);
+
   const {
     handleSubmit,
     register,
@@ -27,9 +39,21 @@ export const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(
+      (user) => user.email === data.email && user.password === data.password,
+    );
 
-    alert("Login realizado com sucesso!");
+    if (user) {
+      setMessage("");
+      alert("Login realizado com sucesso!");
+      navigate("/");
+      return;
+    }
+
+    navigate("/register", {
+      state: { message: "Crie uma conta para continuar" },
+    });
 
     reset();
   };
@@ -42,6 +66,8 @@ export const Login = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+
+        {message && <p className="text-red-500">{message}</p>}
 
         <InputField
           label="E-mail"
