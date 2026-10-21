@@ -7,29 +7,29 @@ function App() {
   const [scrollPorcentagem, setScrollPorcentagem] = useState(0);
 
   useEffect(() => {
-    // Função chamada toda vez que o usuário rolar o container
+    // Função é chamada a qualquer momento que o usuário rola o container - Function is called everytime that the user scrolls the container
     function handleScroll() {
-      // Extrai propriedades do elemento DOM que temos a referência
+      // Extrai propriedades do elemento DOM que temos a referência - Extracts properties from the DOM element that we have the reference
       const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-      // scrollTop: quanto foi rolado a partir do topo
-      // scrollHeight: altura total do conteúdo interno
-      // clientHeight: altura visivel do container
+      // scrollTop: quanto foi rolado a partir do topo - how much was scrolled from the top
+      // scrollHeight: altura total do conteúdo interno - total height of the inner content
+      // clientHeight: altura visivel do container - visible height of the container
 
-      // Calcular porcentagem rolada com base em uma fórmula:
+      // Calcular porcentagem rolada com base em uma fórmula - Calculate the scrolled percentage based on a formula
       const totalRolado = (scrollTop / (scrollHeight - clientHeight)) * 100;
       
-      // Arredondar o valor e atualizar o estado
+      // Arredondar o valor e atualizar o estado - Round the value and update the state
       setScrollPorcentagem(Math.round(totalRolado));
     }
 
-    // Acessa o elemento diretamente
+    // Acessa o elemento diretamente - Access the element directly
     const elemento = scrollRef.current;
 
-    // Adicionar ouvinte de evento
+    // Adicionar ouvinte de evento - Add an event listener
     elemento.addEventListener('scroll', handleScroll);
 
-    // Retornar uma função de limpeza
-    // Remover o ouvinte de evento e evitar vazamento de memória
+    // Retornar uma função de limpeza - Return a cleaning function
+    // Remover o ouvinte de evento e evitar vazamento de memória - Remove the event listener and memory leak
     return () => {
       elemento.removeEventListener('scroll', handleScroll);
     }
