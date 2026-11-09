@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import CampoTexto from './components/InputText/CampoTexto';
 
 function App() {
   const inputRef = useRef(null);
@@ -21,7 +22,7 @@ function App() {
     <div>
       <h1>useRef - Challenge</h1>
 
-      <input type="text" ref={inputRef} />
+      <CampoTexto ref={inputRef} />
       <button onClick={handleUseRef}>Focus the input</button>
     </div>
   )
