@@ -8,8 +8,12 @@ function App() {
     console.log(`The width of this input text is ${textInputWidth}px.`);
   }
 
-  function handleUseRef() {
+  function handleInputFocus() {
     inputRef.current.focus();
+  }
+
+  function handleUseRef() {
+    handleInputFocus();
     printInputWidth();
   }
 
